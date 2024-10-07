@@ -1,7 +1,7 @@
 buildscript {
 	ext {
 		lombokVersion = backstage.versions.lombok.get()
-		gradlePluginsVersion = "2.0.10-Beta7" //backstage.versions.gradlePlugins.get()
+		gradlePluginsVersion = backstage.versions.gradlePlugins.get()
 
 		springBootVersion = backstage.versions.springBoot.get()
 		springCloudVersion = backstage.versions.springCloud.get()
