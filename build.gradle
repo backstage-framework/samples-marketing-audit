@@ -33,11 +33,11 @@ buildscript {
 }
 
 subprojects {
-    apply plugin: 'java'
-    apply plugin: 'idea'
+	apply plugin: 'java'
+	apply plugin: 'idea'
 	apply plugin: 'backstage-checkstyle'
 
-    repositories {
+	repositories {
 		maven {
 			url backstageNexusUrl
 			credentials(HttpHeaderCredentials) {
@@ -49,13 +49,13 @@ subprojects {
 			}
 		}
 
-	    mavenCentral()
-    }
+		mavenCentral()
+	}
 
-    wrapper {
-        gradleVersion = '8.10.2'
-        distributionType = Wrapper.DistributionType.BIN
-    }
+	wrapper {
+		gradleVersion = '8.10.2'
+		distributionType = Wrapper.DistributionType.BIN
+	}
 
 	java {
 		toolchain {
@@ -63,6 +63,6 @@ subprojects {
 		}
 	}
 
-    compileJava.options.encoding = sourceEncoding
-    compileTestJava.options.encoding = sourceEncoding
+	compileJava.options.encoding = sourceEncoding
+	compileTestJava.options.encoding = sourceEncoding
 }

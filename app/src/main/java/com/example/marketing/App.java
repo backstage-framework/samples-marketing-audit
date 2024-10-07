@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class App
 {
-    public static void main(String[] args)
-    {
-        SpringApplicationUtils.runWithBufferingApplicationStartup(args, App.class);
-    }
+	public static void main(String[] args)
+	{
+		SpringApplicationUtils.runWithBufferingApplicationStartup(args, App.class);
+	}
 }
