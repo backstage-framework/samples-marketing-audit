@@ -1,0 +1,68 @@
+buildscript {
+	ext {
+		lombokVersion = backstage.versions.lombok.get()
+		gradlePluginsVersion = "2.0.10-Beta7" //backstage.versions.gradlePlugins.get()
+
+		springBootVersion = backstage.versions.springBoot.get()
+		springCloudVersion = backstage.versions.springCloud.get()
+		postgisVersion = backstage.versions.postgis.get()
+		geolatteVersion = backstage.versions.geolatte.get()
+	}
+
+	ext["groovy.version"] = backstage.versions.groovy.get()
+	ext["flyway.version"] = backstage.versions.flyway.get()
+
+	repositories {
+		maven {
+			url backstageNexusUrl
+			credentials(HttpHeaderCredentials) {
+				name = "Deploy-Token"
+				value = backstageNexusToken
+			}
+			authentication {
+				header(HttpHeaderAuthentication)
+			}
+		}
+
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath "com.backstage:gradle-plugins:$gradlePluginsVersion"
+	}
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+	apply plugin: 'backstage-checkstyle'
+
+    repositories {
+		maven {
+			url backstageNexusUrl
+			credentials(HttpHeaderCredentials) {
+				name = "Deploy-Token"
+				value = backstageNexusToken
+			}
+			authentication {
+				header(HttpHeaderAuthentication)
+			}
+		}
+
+	    mavenCentral()
+    }
+
+    wrapper {
+        gradleVersion = '8.10.2'
+        distributionType = Wrapper.DistributionType.BIN
+    }
+
+	java {
+		toolchain {
+			languageVersion = JavaLanguageVersion.of(sourceJavaVersion)
+		}
+	}
+
+    compileJava.options.encoding = sourceEncoding
+    compileTestJava.options.encoding = sourceEncoding
+}

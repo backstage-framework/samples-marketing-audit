@@ -1,0 +1,44 @@
+plugins {
+    id 'org.springframework.boot' version "$springBootVersion"
+    id 'io.freefair.lombok' version "$lombokVersion"
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'backstage-app-version'
+apply plugin: 'backstage-dicts-codegen'
+
+delombok {
+    enabled = false
+}
+
+configurations {
+    implementation.exclude module: "spring-boot-starter-tomcat"
+}
+
+dependencies {
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    implementation "com.backstage:dicts:$backstageVersion"
+    implementation "com.backstage:cache:$backstageVersion"
+    implementation "com.backstage:attachments:$backstageVersion"
+
+    implementation "org.ehcache:ehcache"
+
+    implementation "org.springframework.boot:spring-boot-starter-undertow"
+
+    implementation "net.postgis:postgis-jdbc:$postgisVersion"
+}
+
+bootJar {
+    archiveBaseName = project.name
+
+    duplicatesStrategy(DuplicatesStrategy.FAIL)
+}
+
+springBoot {
+    mainClass = 'com.example.marketing.App'
+}
+
+dictsCodegen {
+    targetPackage = "com.example.marketing.service.generated"
+}

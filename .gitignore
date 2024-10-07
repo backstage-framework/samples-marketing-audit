@@ -1,0 +1,10 @@
+.gradle
+.idea
+build
+jms-*
+logs
+out
+uploads
+.DS_Store
+**/.DS_Store
+data
