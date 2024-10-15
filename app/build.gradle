@@ -31,12 +31,6 @@ dependencies {
 
 bootJar {
 	archiveBaseName = project.name
-
-	duplicatesStrategy(DuplicatesStrategy.FAIL)
-}
-
-springBoot {
-	mainClass = 'com.example.marketing.App'
 }
 
 dictsCodegen {
