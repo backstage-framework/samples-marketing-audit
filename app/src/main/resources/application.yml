@@ -1,43 +1,39 @@
 server:
-  port: 8080
+    port: 8080
 
 management:
-  endpoint:
-    health:
-      show-details: always
+    endpoint:
+        health:
+            show-details: always
 
-  endpoints.web.exposure.include: [ info, health, logfile, startup ]
+    endpoints.web.exposure.include: [ info, health, logfile, startup ]
 
 spring:
-  flyway:
-    enabled: false
+    flyway:
+        enabled: false
 
 app:
-  url: http://localhost:8080/
-  externalUrl: http://localhost:8080/
-  dataSource:
-    driverClassName: org.postgis.DriverWrapper
-    username: postgres
-    password: postgres
-    url: jdbc:postgresql_postGIS://localhost:5432/postgres
-    maximumPoolSize: 8
-    maxLifetime: 300000
-    leakDetectionThreshold: 60000
+    url: http://localhost:8080/
+    externalUrl: http://localhost:8080/
+    dataSource:
+        driverClassName: org.postgis.DriverWrapper
+        username: postgres
+        password: postgres
+        url: jdbc:postgresql_postGIS://localhost:5432/postgres
+        maximumPoolSize: 8
+        maxLifetime: 300000
+        leakDetectionThreshold: 60000
 
-  cache:
-    enabled: true
+    attachments:
+        enabled: true
+        store-type: directory
+        base-url: ${app.externalUrl}
+        directory:
+            path: uploads
 
-  attachments:
-    enabled: true
-    store-type: directory
-    base-url: ${app.externalUrl}
-    directory:
-      path: uploads
-
-  dicts:
-    enabled: true
-    storage: postgres
-    engines: postgres
-    default-engine: postgres
-    ddl:
-      scheme: dicts
+    dicts:
+        storage: postgres
+        engines: postgres
+        default-engine: postgres
+        ddl:
+            scheme: dicts
