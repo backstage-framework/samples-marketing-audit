@@ -19,7 +19,6 @@ dependencies {
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
 	implementation "com.backstage:dicts:$backstageVersion"
-	implementation "com.backstage:cache:$backstageVersion"
 	implementation "com.backstage:attachments:$backstageVersion"
 
 	implementation "org.ehcache:ehcache"

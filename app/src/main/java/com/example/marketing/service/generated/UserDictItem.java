@@ -15,7 +15,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-10-19T09:56:12.810083+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-10-24T16:10:11.984868+03:00[Europe/Moscow]")
 @Schema(description = "Пользователи")
 public final class UserDictItem implements AbstractDictItem
 {
@@ -24,8 +24,6 @@ public final class UserDictItem implements AbstractDictItem
 	public static final String ID = "id";
 
 	public static final String NAME = "name";
-
-	public static final String VALIDATED = "validated";
 
 	public static final String CREATED = "created";
 
@@ -45,8 +43,6 @@ public final class UserDictItem implements AbstractDictItem
 	@Schema(description = "Имя")
 	@NotNull
 	private String name;
-
-	private Boolean validated;
 
 	@Schema(description = "Дата создания")
 	@NotNull
@@ -74,7 +70,6 @@ public final class UserDictItem implements AbstractDictItem
 	{
 		this.id = dictItem.getId();
 		this.name = (String) dictItem.getData().get(NAME);
-		this.validated = (Boolean) dictItem.getData().get(VALIDATED);
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
 		this.deleted = dictItem.getDeleted();
@@ -88,7 +83,6 @@ public final class UserDictItem implements AbstractDictItem
 	{
 		var dataMap = new HashMap<String, Object>();
 		dataMap.put(NAME, getName());
-		dataMap.put(VALIDATED, getValidated());
 		return dataMap;
 	}
 }
