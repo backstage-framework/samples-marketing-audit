@@ -8,15 +8,11 @@ management:
 
     endpoints.web.exposure.include: [ info, health, logfile, startup ]
 
-spring:
-    flyway:
-        enabled: false
-
 app:
     url: http://localhost:8080/
     externalUrl: http://localhost:8080/
     dataSource:
-        driverClassName: org.postgis.DriverWrapper
+        driverClassName: net.postgis.jdbc.DriverWrapper
         username: postgres
         password: postgres
         url: jdbc:postgresql_postGIS://localhost:5432/postgres
