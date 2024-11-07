@@ -15,7 +15,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-10-24T16:10:11.982488+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-07T19:22:04.995015+03:00[Europe/Moscow]")
 @Schema(description = "Зона внутри магазина")
 public final class MarketingZoneDictItem implements AbstractDictItem
 {
