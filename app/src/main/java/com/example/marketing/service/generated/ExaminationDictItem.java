@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -96,7 +97,7 @@ public final class ExaminationDictItem implements AbstractDictItem
 		this.marketingZone = (String) dictItem.getData().get(MARKETING_ZONE);
 		this.user = (String) dictItem.getData().get(USER);
 		this.timestamp = (LocalDateTime) dictItem.getData().get(TIMESTAMP);
-		this.photos = (List<String>) dictItem.getData().get(PHOTOS);
+		this.photos = new ArrayList<>((List<String>) dictItem.getData().get(PHOTOS));
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
 		this.deleted = dictItem.getDeleted();
