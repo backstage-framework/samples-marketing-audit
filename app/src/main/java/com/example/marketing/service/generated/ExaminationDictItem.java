@@ -9,14 +9,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-07T19:22:04.999930+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-13T13:06:25.509751+03:00[Europe/Moscow]")
 @Schema(description = "Проверки")
 public final class ExaminationDictItem implements AbstractDictItem
 {
@@ -90,6 +87,7 @@ public final class ExaminationDictItem implements AbstractDictItem
 	@NotNull
 	private Long version;
 
+	@SuppressWarnings("unchecked")
 	public ExaminationDictItem(DictItem dictItem)
 	{
 		this.id = dictItem.getId();
@@ -97,7 +95,7 @@ public final class ExaminationDictItem implements AbstractDictItem
 		this.marketingZone = (String) dictItem.getData().get(MARKETING_ZONE);
 		this.user = (String) dictItem.getData().get(USER);
 		this.timestamp = (LocalDateTime) dictItem.getData().get(TIMESTAMP);
-		this.photos = new ArrayList<>((List<String>) dictItem.getData().get(PHOTOS));
+		this.photos = new ArrayList<>((List<String>) Objects.requireNonNullElse(dictItem.getData().get(PHOTOS), List.of()));
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
 		this.deleted = dictItem.getDeleted();

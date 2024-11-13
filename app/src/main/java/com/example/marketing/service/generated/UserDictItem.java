@@ -15,7 +15,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-07T19:22:04.997775+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-13T13:06:25.506954+03:00[Europe/Moscow]")
 @Schema(description = "Пользователи")
 public final class UserDictItem implements AbstractDictItem
 {
@@ -66,6 +66,7 @@ public final class UserDictItem implements AbstractDictItem
 	@NotNull
 	private Long version;
 
+	@SuppressWarnings("unchecked")
 	public UserDictItem(DictItem dictItem)
 	{
 		this.id = dictItem.getId();
