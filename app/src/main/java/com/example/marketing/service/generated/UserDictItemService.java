@@ -6,7 +6,7 @@ import com.backstage.app.dict.service.codegen.base.AbstractDictItemService;
 import jakarta.annotation.Generated;
 import org.springframework.stereotype.Service;
 
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemServiceGenerator", date = "2024-11-13T13:06:25.507341+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemServiceGenerator", date = "2024-11-13T15:42:17.711402+03:00[Europe/Moscow]")
 @Service
 public class UserDictItemService extends AbstractDictItemService<UserDictItem>
 {
