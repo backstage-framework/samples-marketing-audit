@@ -1,10 +1,11 @@
 package com.example.marketing.service.generated;
 
 import com.backstage.app.dict.domain.DictItem;
-import com.backstage.app.dict.service.codegen.base.AbstractDictItem;
+import com.backstage.app.dict.service.codegen.client.base.AbstractDictItem;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,33 +17,19 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-13T15:42:17.698846+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2024-12-24T13:02:41.349879+03:00[Europe/Moscow]")
 @Schema(description = "Магазины")
 public final class StoreDictItem implements AbstractDictItem
 {
-	public static final String DICT_ID = "store";
+	static final String DICT_ID = "store";
 
-	public static final String ID = "id";
+	static final String NAME = "name";
 
-	public static final String NAME = "name";
+	static final String LATITUDE = "latitude";
 
-	public static final String LATITUDE = "latitude";
+	static final String LONGITUDE = "longitude";
 
-	public static final String LONGITUDE = "longitude";
-
-	public static final String ADDRESS = "address";
-
-	public static final String CREATED = "created";
-
-	public static final String UPDATED = "updated";
-
-	public static final String DELETED = "deleted";
-
-	public static final String DELETION_REASON = "deletionReason";
-
-	public static final String HISTORY = "history";
-
-	public static final String VERSION = "version";
+	static final String ADDRESS = "address";
 
 	@Schema(description = "Идентификатор")
 	private String id;
@@ -84,6 +71,15 @@ public final class StoreDictItem implements AbstractDictItem
 	@Schema(description = "Версия")
 	@NotNull
 	private Long version;
+
+	@Builder
+	public StoreDictItem(String name, BigDecimal latitude, BigDecimal longitude, String address)
+	{
+		this.name = name;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.address = address;
+	}
 
 	public StoreDictItem(DictItem dictItem)
 	{

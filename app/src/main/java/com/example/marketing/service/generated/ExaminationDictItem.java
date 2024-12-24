@@ -1,10 +1,11 @@
 package com.example.marketing.service.generated;
 
 import com.backstage.app.dict.domain.DictItem;
-import com.backstage.app.dict.service.codegen.base.AbstractDictItem;
+import com.backstage.app.dict.service.codegen.client.base.AbstractDictItem;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,35 +14,21 @@ import java.util.*;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-13T15:42:17.713081+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2024-12-24T13:02:41.362441+03:00[Europe/Moscow]")
 @Schema(description = "Проверки")
 public final class ExaminationDictItem implements AbstractDictItem
 {
-	public static final String DICT_ID = "examination";
+	static final String DICT_ID = "examination";
 
-	public static final String ID = "id";
+	static final String STORE = "store";
 
-	public static final String STORE = "store";
+	static final String MARKETING_ZONE = "marketingZone";
 
-	public static final String MARKETING_ZONE = "marketingZone";
+	static final String USER = "user";
 
-	public static final String USER = "user";
+	static final String TIMESTAMP = "timestamp";
 
-	public static final String TIMESTAMP = "timestamp";
-
-	public static final String PHOTOS = "photos";
-
-	public static final String CREATED = "created";
-
-	public static final String UPDATED = "updated";
-
-	public static final String DELETED = "deleted";
-
-	public static final String DELETION_REASON = "deletionReason";
-
-	public static final String HISTORY = "history";
-
-	public static final String VERSION = "version";
+	static final String PHOTOS = "photos";
 
 	@Schema(description = "Идентификатор")
 	private String id;
@@ -86,6 +73,16 @@ public final class ExaminationDictItem implements AbstractDictItem
 	@Schema(description = "Версия")
 	@NotNull
 	private Long version;
+
+	@Builder
+	public ExaminationDictItem(String store, String marketingZone, String user, LocalDateTime timestamp, List<String> photos)
+	{
+		this.store = store;
+		this.marketingZone = marketingZone;
+		this.user = user;
+		this.timestamp = timestamp;
+		this.photos = photos;
+	}
 
 	@SuppressWarnings("unchecked")
 	public ExaminationDictItem(DictItem dictItem)

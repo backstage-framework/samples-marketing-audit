@@ -1,10 +1,11 @@
 package com.example.marketing.service.generated;
 
 import com.backstage.app.dict.domain.DictItem;
-import com.backstage.app.dict.service.codegen.base.AbstractDictItem;
+import com.backstage.app.dict.service.codegen.client.base.AbstractDictItem;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,27 +16,13 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.generator.DictItemModelGenerator", date = "2024-11-13T15:42:17.708363+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2024-12-24T13:02:41.358721+03:00[Europe/Moscow]")
 @Schema(description = "Зона внутри магазина")
 public final class MarketingZoneDictItem implements AbstractDictItem
 {
-	public static final String DICT_ID = "marketingZone";
+	static final String DICT_ID = "marketingZone";
 
-	public static final String ID = "id";
-
-	public static final String NAME = "name";
-
-	public static final String CREATED = "created";
-
-	public static final String UPDATED = "updated";
-
-	public static final String DELETED = "deleted";
-
-	public static final String DELETION_REASON = "deletionReason";
-
-	public static final String HISTORY = "history";
-
-	public static final String VERSION = "version";
+	static final String NAME = "name";
 
 	@Schema(description = "Идентификатор")
 	private String id;
@@ -65,6 +52,12 @@ public final class MarketingZoneDictItem implements AbstractDictItem
 	@Schema(description = "Версия")
 	@NotNull
 	private Long version;
+
+	@Builder
+	public MarketingZoneDictItem(String name)
+	{
+		this.name = name;
+	}
 
 	public MarketingZoneDictItem(DictItem dictItem)
 	{
