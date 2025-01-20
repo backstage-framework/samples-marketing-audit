@@ -14,21 +14,37 @@ import java.util.*;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2024-12-24T13:02:41.362441+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-01-16T19:19:15.602403+03:00[Europe/Moscow]")
 @Schema(description = "Проверки")
 public final class ExaminationDictItem implements AbstractDictItem
 {
-	static final String DICT_ID = "examination";
+	public static final String DICT_ID = "examination";
 
-	static final String STORE = "store";
+	public static final Long DICT_VERSION = 1L;
 
-	static final String MARKETING_ZONE = "marketingZone";
+	public static final String ID = "id";
 
-	static final String USER = "user";
+	public static final String STORE = "store";
 
-	static final String TIMESTAMP = "timestamp";
+	public static final String MARKETING_ZONE = "marketingZone";
 
-	static final String PHOTOS = "photos";
+	public static final String USER = "user";
+
+	public static final String TIMESTAMP = "timestamp";
+
+	public static final String PHOTOS = "photos";
+
+	public static final String CREATED = "created";
+
+	public static final String UPDATED = "updated";
+
+	public static final String DELETED = "deleted";
+
+	public static final String DELETION_REASON = "deletionReason";
+
+	public static final String HISTORY = "history";
+
+	public static final String VERSION = "version";
 
 	@Schema(description = "Идентификатор")
 	private String id;

@@ -4,6 +4,7 @@
 ### Запуск
 1. Поднять тестовое окружение.
 ```sh
+docker login git.backstage-platform.ru:5050 -u registry-viewer -p gldt-yyxxD9zddKaWD_QsbVLt
 docker-compose -f ./devops/localhost/docker/docker-compose.yml -p backstage-marketing-app up
 ```
 
@@ -11,13 +12,15 @@ docker-compose -f ./devops/localhost/docker/docker-compose.yml -p backstage-mark
 ```sh
 ./gradlew bootRun
 ```
-Эндпоинты доступны в [Swagger](http://localhost:8080/swagger-ui/index.html), метрики в [Actuator](http://localhost:8080/actuator).
 
-3. Сгенерировать клиенты для dicts.
+Пользовательский интерфейс доступен по [ссылке](http://localhost/). Описание API доступно в [Swagger](http://localhost:8080/swagger-ui/index.html), метрики в [Actuator](http://localhost:8080/actuator).
+
+3. Если в структуру справочников вносятся изменения, то необходимо повторно сгенерировать клиенты для dicts.
 ```sh
 ./gradlew app:dictsCodegen
 ```
-После завершения задачи, в пакете com.example.marketing.service.generated появятся модели и клиенты к API dicts.
+После завершения задачи, в пакете com.example.marketing.service.generated появятся обновлённые модели и клиенты к API dicts.
+Чтобы изменения отобразились в интерфейсе, перезапускаем приложение.
 
 ### Остановка
 ```sh
