@@ -14,7 +14,7 @@ docker-compose -f ./devops/localhost/docker/docker-compose.yml -p backstage-mark
 ./gradlew bootRun
 ```
 
-Пользовательский интерфейс доступен по [ссылке](http://localhost/). Описание API доступно в [Swagger](http://localhost:8080/swagger-ui/index.html), метрики в [Actuator](http://localhost:8080/actuator).
+Пользовательский интерфейс доступен по [ссылке](http://localhost/) (логин/пароль: admin/admin). Описание API доступно в [Swagger](http://localhost:8080/swagger-ui/index.html), метрики в [Actuator](http://localhost:8080/actuator).
 
 3. Если в структуру справочников вносятся изменения, то необходимо повторно сгенерировать клиенты для dicts.
 ```sh
