@@ -16,13 +16,13 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-01-16T19:19:15.600698+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-01-29T12:03:57.809717+03:00[Europe/Moscow]")
 @Schema(description = "Пользователи")
 public final class UserDictItem implements AbstractDictItem
 {
 	public static final String DICT_ID = "user";
 
-	public static final Long DICT_VERSION = 1L;
+	public static final Long DICT_VERSION = 2L;
 
 	public static final String ID = "id";
 

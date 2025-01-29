@@ -16,6 +16,8 @@ create table user['Пользователи']
 	name['Имя'] 								    text 		    not null
 );
 
+alter table user set writePermission = 'ADMIN';
+
 create table examination['Проверки']
 (
     store['Магазин']						        text		    not null	references store,
