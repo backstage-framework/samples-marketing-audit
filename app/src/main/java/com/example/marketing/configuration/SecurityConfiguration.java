@@ -25,7 +25,8 @@ public class SecurityConfiguration
 				.authorizeHttpRequests(requests -> requests
 						.anyRequest().authenticated())
 				.formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
-				.logout(LogoutConfigurer::permitAll)
+				.logout(logout -> logout
+						.logoutUrl("/api/logout"))
 				.csrf(CsrfConfigurer::disable)
 				.build();
 	}
