@@ -27,3 +27,8 @@ docker-compose -f ./devops/localhost/docker/docker-compose.yml -p backstage-mark
 ```sh
 docker-compose -p backstage-marketing-app stop
 ```
+
+## Скриншоты
+![Список магазинов](docs/img1.png)
+![Добавление новой записи](docs/img2.png)
+![Фильтрация](docs/img3.png)
