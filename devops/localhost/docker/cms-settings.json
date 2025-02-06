@@ -1,0 +1,52 @@
+{
+	"views": {
+		"default": {
+			"dicts": {
+				"store": {
+					"fields": [
+						"id",
+						"name"
+					]
+				},
+				"marketingZone": {
+					"fields": [
+						"*"
+					]
+				},
+				"examination": {
+					"fields": [
+						"*"
+					],
+					"sort": "created DESC"
+				}
+			}
+		},
+		"admin": {
+			"dicts": {
+				"store": {
+					"fields": [
+						"id",
+						"name"
+					]
+				},
+				"marketingZone": {
+					"fields": [
+						"*"
+					]
+				},
+				"user": {
+					"fields": [
+						"*"
+					]
+				}
+			}
+		}
+	},
+	"userViewMapping": {
+		"*": "default",
+		"admin": "admin"
+	},
+	"permissionViewMapping": {
+		"ADMIN": "admin"
+	}
+}

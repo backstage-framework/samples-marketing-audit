@@ -13,6 +13,7 @@ services:
         image: nginx:latest
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./cms-settings.json:/usr/share/nginx/html/cms-settings.json
         ports:
             - "80:80"
         extra_hosts:
