@@ -1,52 +1,61 @@
 {
-	"views": {
-		"default": {
-			"dicts": {
-				"store": {
-					"fields": [
-						"id",
-						"name"
-					]
-				},
-				"marketingZone": {
-					"fields": [
-						"*"
-					]
-				},
-				"examination": {
-					"fields": [
-						"*"
-					],
-					"sort": "created DESC"
-				}
-			}
-		},
-		"admin": {
-			"dicts": {
-				"store": {
-					"fields": [
-						"id",
-						"name"
-					]
-				},
-				"marketingZone": {
-					"fields": [
-						"*"
-					]
-				},
-				"user": {
-					"fields": [
-						"*"
-					]
-				}
-			}
-		}
-	},
-	"userViewMapping": {
-		"*": "default",
-		"admin": "admin"
-	},
-	"permissionViewMapping": {
-		"ADMIN": "admin"
-	}
+  "views": {
+    "default": {
+      "menuType": "VERTICAL",
+      "items": [
+        {
+          "dictId": "store",
+          "fields": ["id", "name"]
+        },
+        {
+          "dictId": "marketingZone",
+          "fields": ["*"]
+        },
+        {
+          "dictId": "examination",
+          "defaultSort": "created DESC"
+        },
+        {
+          "url": "archive",
+          "title": "Архив",
+          "dictId": "examination",
+          "forceFilter": "created > '2023-02-01T00:00:00'::timestamp",
+          "defaultFilter": "created < '2026-02-01T00:00:00'::timestamp",
+          "defaultSort": "created DESC"
+        }
+      ]
+    },
+    "admin": {
+      "menuType": "HORIZONTAL",
+      "items": [
+        {
+          "dictId": "store",
+          "fields": ["id", "name"]
+        },
+        {
+          "dictId": "marketingZone",
+          "fields": ["*"]
+        },
+        {
+          "url": "archive",
+          "title": "Архив",
+          "dictId": "examination",
+          "forceFilter": "created > '2023-02-01T00:00:00'::timestamp",
+          "defaultFilter": "created < '2026-02-01T00:00:00'::timestamp",
+          "defaultSort": "created DESC"
+        },
+        {
+          "dictId": "examination",
+          "defaultSort": "created ASC"
+        }
+      ]
+    }
+  },
+  "userViewMapping": {
+    "*": "default",
+    "admin": "admin"
+  },
+  "permissionViewMapping": {
+    "ADMIN": "admin"
+  }
 }
