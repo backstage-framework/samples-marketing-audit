@@ -8,8 +8,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.geojson.GeoJsonObject;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-01-29T12:03:57.795761+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-02-07T12:10:23.584702+03:00[Europe/Moscow]")
 @Schema(description = "Магазины")
 public final class StoreDictItem implements AbstractDictItem
 {
@@ -29,9 +29,7 @@ public final class StoreDictItem implements AbstractDictItem
 
 	public static final String NAME = "name";
 
-	public static final String LATITUDE = "latitude";
-
-	public static final String LONGITUDE = "longitude";
+	public static final String LOCATION = "location";
 
 	public static final String ADDRESS = "address";
 
@@ -54,13 +52,9 @@ public final class StoreDictItem implements AbstractDictItem
 	@NotNull
 	private String name;
 
-	@Schema(description = "Широта")
+	@Schema(description = "Расположение")
 	@NotNull
-	private BigDecimal latitude;
-
-	@Schema(description = "Долгота")
-	@NotNull
-	private BigDecimal longitude;
+	private GeoJsonObject location;
 
 	@Schema(description = "Адрес")
 	@NotNull
@@ -89,11 +83,10 @@ public final class StoreDictItem implements AbstractDictItem
 	private Long version;
 
 	@Builder
-	public StoreDictItem(String name, BigDecimal latitude, BigDecimal longitude, String address)
+	public StoreDictItem(String name, GeoJsonObject location, String address)
 	{
 		this.name = name;
-		this.latitude = latitude;
-		this.longitude = longitude;
+		this.location = location;
 		this.address = address;
 	}
 
@@ -101,8 +94,7 @@ public final class StoreDictItem implements AbstractDictItem
 	{
 		this.id = dictItem.getId();
 		this.name = (String) dictItem.getData().get(NAME);
-		this.latitude = (BigDecimal) dictItem.getData().get(LATITUDE);
-		this.longitude = (BigDecimal) dictItem.getData().get(LONGITUDE);
+		this.location = (GeoJsonObject) dictItem.getData().get(LOCATION);
 		this.address = (String) dictItem.getData().get(ADDRESS);
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
@@ -117,8 +109,7 @@ public final class StoreDictItem implements AbstractDictItem
 	{
 		var dataMap = new HashMap<String, Object>();
 		dataMap.put(NAME, getName());
-		dataMap.put(LATITUDE, getLatitude());
-		dataMap.put(LONGITUDE, getLongitude());
+		dataMap.put(LOCATION, getLocation());
 		dataMap.put(ADDRESS, getAddress());
 		return dataMap;
 	}

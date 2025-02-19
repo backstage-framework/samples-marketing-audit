@@ -1,8 +1,7 @@
 create table store['Магазины']
 (
 	name['Название'] 								text 		    not null,
-    latitude['Широта']      					    decimal		    not null,
-    longitude['Долгота']      					    decimal		    not null,
+	location['Расположение']						geo_json	    not null,
     address['Адрес']        	                    text	        not null
 );
 

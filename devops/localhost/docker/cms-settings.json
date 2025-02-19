@@ -5,7 +5,7 @@
       "items": [
         {
           "dictId": "store",
-          "fields": ["id", "name"]
+          "fields": ["id", "name", "location"]
         },
         {
           "dictId": "marketingZone",
@@ -13,14 +13,6 @@
         },
         {
           "dictId": "examination",
-          "defaultSort": "created DESC"
-        },
-        {
-          "url": "archive",
-          "title": "Архив",
-          "dictId": "examination",
-          "forceFilter": "created > '2023-02-01T00:00:00'::timestamp",
-          "defaultFilter": "created < '2026-02-01T00:00:00'::timestamp",
           "defaultSort": "created DESC"
         }
       ]
@@ -29,24 +21,29 @@
       "menuType": "HORIZONTAL",
       "items": [
         {
-          "dictId": "store",
-          "fields": ["id", "name"]
-        },
-        {
-          "dictId": "marketingZone",
-          "fields": ["*"]
-        },
-        {
           "url": "archive",
           "title": "Архив",
           "dictId": "examination",
           "forceFilter": "created > '2023-02-01T00:00:00'::timestamp",
           "defaultFilter": "created < '2026-02-01T00:00:00'::timestamp",
-          "defaultSort": "created DESC"
+          "defaultSort": "store DESC"
         },
         {
+          "dictId": "store",
+          "fields": ["id", "name", "location"],
+          "pageType": "SCROLL"
+        },
+        {
+          "dictId": "marketingZone",
+          "fields": ["*"],
+          "pageType": "PAGINATION",
+          "defaultSort": "updated DESC"
+        },
+
+        {
           "dictId": "examination",
-          "defaultSort": "created ASC"
+          "defaultSort": "created ASC",
+          "pageType": "SCROLL"
         }
       ]
     }
