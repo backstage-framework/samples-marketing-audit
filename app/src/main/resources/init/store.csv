@@ -1,5 +1,5 @@
-id,name,location,address
-1,МЕТРО,"{""type"":""Feature"",""geometry"":{""type"":""Point"",""coordinates"":[55.800360,37.593794]}}","Складочная улица, 1с1, Москва"
-2,Ашан,"{""type"":""Feature"",""geometry"":{""type"":""Point"",""coordinates"":[55.803360,37.618788]}}","Шереметьевская улица, 20, Москва"
-3,Пятёрочка,"{""type"":""Feature"",""geometry"":{""type"":""Point"",""coordinates"":[55.818426,37.630064]}}","улица Цандера, 7к2А, Москва"
-4,Глобус,"{ ""type"": ""FeatureCollection"", ""features"": [ { ""type"": ""Feature"", ""geometry"": { ""type"": ""Point"", ""coordinates"": [56.018138, 37.885853] }, ""properties"": {} }, { ""type"": ""Feature"", ""geometry"": { ""type"": ""Point"", ""coordinates"": [56.018139, 37.885855] }, ""properties"": {} } ]}","Красноармейское шоссе, вл105, Пушкино, Московская область"
+id,name,location,address,details
+1,МЕТРО,"{""type"":""Feature"",""geometry"":{""type"":""Point"",""coordinates"":[55.800360,37.593794]}}","Складочная улица, 1с1, Москва","{""country"": ""GERMANY""}"
+2,Ашан,"{""type"":""Feature"",""geometry"":{""type"":""Point"",""coordinates"":[55.803360,37.618788]}}","Шереметьевская улица, 20, Москва",
+3,Пятёрочка,"{""type"":""Feature"",""geometry"":{""type"":""Point"",""coordinates"":[55.818426,37.630064]}}","улица Цандера, 7к2А, Москва",
+4,Глобус,"{ ""type"": ""FeatureCollection"", ""features"": [ { ""type"": ""Feature"", ""geometry"": { ""type"": ""Point"", ""coordinates"": [56.018138, 37.885853] }, ""properties"": {} }, { ""type"": ""Feature"", ""geometry"": { ""type"": ""Point"", ""coordinates"": [56.018139, 37.885855] }, ""properties"": {} } ]}","Красноармейское шоссе, вл105, Пушкино, Московская область",

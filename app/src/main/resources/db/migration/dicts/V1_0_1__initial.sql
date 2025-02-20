@@ -2,7 +2,8 @@ create table store['Магазины']
 (
 	name['Название'] 								text 		    not null,
 	location['Расположение']						geo_json	    not null,
-    address['Адрес']        	                    text	        not null
+    address['Адрес']								text	        not null,
+	details['Дополнительные атрибуты']				json
 );
 
 create table marketingZone['Зона внутри магазина']

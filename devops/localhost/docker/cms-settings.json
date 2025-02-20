@@ -30,7 +30,7 @@
         },
         {
           "dictId": "store",
-          "fields": ["id", "name", "location"],
+          "fields": ["id", "name", "location", "details"],
           "pageType": "SCROLL"
         },
         {

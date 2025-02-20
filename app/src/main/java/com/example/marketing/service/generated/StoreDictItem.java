@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-02-07T12:10:23.584702+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-02-20T12:07:50.030732+03:00[Europe/Moscow]")
 @Schema(description = "Магазины")
 public final class StoreDictItem implements AbstractDictItem
 {
@@ -32,6 +32,8 @@ public final class StoreDictItem implements AbstractDictItem
 	public static final String LOCATION = "location";
 
 	public static final String ADDRESS = "address";
+
+	public static final String DETAILS = "details";
 
 	public static final String CREATED = "created";
 
@@ -60,6 +62,9 @@ public final class StoreDictItem implements AbstractDictItem
 	@NotNull
 	private String address;
 
+	@Schema(description = "Дополнительные атрибуты")
+	private Map<String, Object> details;
+
 	@Schema(description = "Дата создания")
 	@NotNull
 	private LocalDateTime created;
@@ -83,11 +88,12 @@ public final class StoreDictItem implements AbstractDictItem
 	private Long version;
 
 	@Builder
-	public StoreDictItem(String name, GeoJsonObject location, String address)
+	public StoreDictItem(String name, GeoJsonObject location, String address, Map<String, Object> details)
 	{
 		this.name = name;
 		this.location = location;
 		this.address = address;
+		this.details = details;
 	}
 
 	public StoreDictItem(DictItem dictItem)
@@ -96,6 +102,7 @@ public final class StoreDictItem implements AbstractDictItem
 		this.name = (String) dictItem.getData().get(NAME);
 		this.location = (GeoJsonObject) dictItem.getData().get(LOCATION);
 		this.address = (String) dictItem.getData().get(ADDRESS);
+		this.details = (Map<String, Object>) dictItem.getData().get(DETAILS);
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
 		this.deleted = dictItem.getDeleted();
@@ -111,6 +118,7 @@ public final class StoreDictItem implements AbstractDictItem
 		dataMap.put(NAME, getName());
 		dataMap.put(LOCATION, getLocation());
 		dataMap.put(ADDRESS, getAddress());
+		dataMap.put(DETAILS, getDetails());
 		return dataMap;
 	}
 }
