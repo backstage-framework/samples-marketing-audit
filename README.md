@@ -1,5 +1,14 @@
 # Пример приложения "Аудит посещений супермаркетов"
 
+## Конфигурация
+Структура справочников определяется [миграциями](app/src/main/resources/db/migration/dicts).
+
+Набор справочников и полей, доступных пользователям, определяется [конфигурацией CMS](devops/localhost/docker/cms-settings.json).
+
+Список [доступных пользователей](app/src/main/java/com/example/marketing/configuration/SecurityConfiguration.java):
+- admin/admin
+- operator/operator
+
 ## Локальная отладка
 ### Запуск
 1. Поднять тестовое окружение.
