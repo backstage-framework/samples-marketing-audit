@@ -3,6 +3,8 @@
 ## Конфигурация
 Структура справочников определяется [миграциями](app/src/main/resources/db/migration/dicts).
 
+Данные справочников импортируются из [CSV файлов](app/src/main/resources/init).
+
 Набор справочников и полей, доступных пользователям, определяется [конфигурацией CMS](devops/localhost/docker/cms-settings.json).
 
 Список [доступных пользователей](app/src/main/java/com/example/marketing/configuration/SecurityConfiguration.java):
