@@ -12,7 +12,7 @@
 - operator/operator
 
 Примеры реализованной бизнес-логики над созданными справочниками:
-- При добавлении записи об аудите супермаркета, [добавляем изображения проверки](app/src/main/java/com/example/marketing/service/ExaminationDictItemAdvice.java).
+- При добавлении записи об аудите супермаркета, [добавляем фото из магазина](app/src/main/java/com/example/marketing/service/ExaminationDictItemAdvice.java).
 - При создании нового сотрудника, [проверяем что ФИО не содержит недопустимые символы](app/src/main/java/com/example/marketing/service/UserDictItemAdvice.java).
 
 ## Локальная отладка
