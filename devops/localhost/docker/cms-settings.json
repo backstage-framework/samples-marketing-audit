@@ -1,58 +1,70 @@
 {
-  "views": {
-    "default": {
-      "menuType": "VERTICAL",
-      "items": [
-        {
-          "dictId": "store",
-          "fields": ["id", "name", "location"]
-        },
-        {
-          "dictId": "marketingZone",
-          "fields": ["*"]
-        },
-        {
-          "dictId": "examination",
-          "defaultSort": "created DESC"
-        }
-      ]
-    },
-    "admin": {
-      "menuType": "HORIZONTAL",
-      "items": [
-        {
-          "url": "archive",
-          "title": "Архив",
-          "dictId": "examination",
-          "forceFilter": "created > '2023-02-01T00:00:00'::timestamp",
-          "defaultFilter": "created < '2026-02-01T00:00:00'::timestamp",
-          "defaultSort": "store DESC"
-        },
-        {
-          "dictId": "store",
-          "fields": ["id", "name", "location", "details"],
-          "pageType": "SCROLL"
-        },
-        {
-          "dictId": "marketingZone",
-          "fields": ["*"],
-          "pageType": "PAGINATION",
-          "defaultSort": "updated DESC"
-        },
-
-        {
-          "dictId": "examination",
-          "defaultSort": "created ASC",
-          "pageType": "SCROLL"
-        }
-      ]
-    }
-  },
-  "userViewMapping": {
-    "*": "default",
-    "admin": "admin"
-  },
-  "permissionViewMapping": {
-    "ADMIN": "admin"
-  }
+	"views": {
+		"default": {
+			"menuType": "VERTICAL",
+			"items": [
+				{
+					"dictId": "store",
+					"fields": [
+						"id",
+						"name",
+						"location"
+					]
+				},
+				{
+					"dictId": "marketingZone",
+					"fields": [
+						"*"
+					]
+				},
+				{
+					"dictId": "examination",
+					"defaultSort": "created DESC"
+				}
+			]
+		},
+		"admin": {
+			"menuType": "HORIZONTAL",
+			"items": [
+				{
+					"dictId": "store",
+					"fields": [
+						"id",
+						"name",
+						"location",
+						"details"
+					],
+					"pageType": "SCROLL"
+				},
+				{
+					"dictId": "marketingZone",
+					"fields": [
+						"*"
+					],
+					"pageType": "PAGINATION",
+					"defaultSort": "updated DESC"
+				},
+				{
+					"dictId": "examination",
+					"defaultSort": "created ASC",
+					"pageType": "SCROLL"
+				},
+				{
+					"url": "archive",
+					"title": "Архив",
+					"dictId": "examination",
+					"forceFilter": "created > '2023-02-01T00:00:00'::timestamp",
+					"defaultFilter": "created < '2026-02-01T00:00:00'::timestamp",
+					"defaultSort": "store DESC"
+				}
+			]
+		}
+	},
+	"userViewMapping": {
+		"*": "default",
+		"admin": "admin"
+	},
+	"permissionViewMapping": {
+		"ADMIN": "admin"
+	}
 }
