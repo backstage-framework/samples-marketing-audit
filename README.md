@@ -49,5 +49,6 @@ docker-compose -p backstage-marketing-app stop
 
 ## Скриншоты
 ![Список магазинов](docs/img1.png)
-![Добавление новой записи](docs/img2.png)
-![Фильтрация](docs/img3.png)
+![Магазин на карте](docs/img2.png)
+![Редактирование информации о магазине](docs/img3.png)
+![Фильтрация](docs/img4.png)
