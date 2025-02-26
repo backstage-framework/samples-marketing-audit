@@ -4,9 +4,11 @@
 			"menuType": "VERTICAL",
 			"items": [
 				{
+					"dictId": "user"
+				},
+				{
 					"dictId": "store",
 					"fields": [
-						"id",
 						"name",
 						"location"
 					]
@@ -29,7 +31,6 @@
 				{
 					"dictId": "store",
 					"fields": [
-						"id",
 						"name",
 						"location",
 						"details"
