@@ -25,7 +25,7 @@ public class ExaminationDictItemAdvice extends ExaminationDictItemAbstractAdvice
 	@Value("classpath:/init/photos/fry.jpg")
 	private Resource firstPhotoResource;
 
-	@Value("classpath:/init/photos/fry.jpg")
+	@Value("classpath:/init/photos/bender.jpg")
 	private Resource secondPhotoResource;
 
 	private final List<String> photoIds = new ArrayList<>();
