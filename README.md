@@ -23,7 +23,7 @@
 ### Запуск
 1. Поднять тестовое окружение.
 ```sh
-docker image rm -f git.backstage-platform.ru:5050/backstage/components/dicts-ui-library
+docker image rm -f git.backstage-platform.ru:5050/backstage/components/cms
 docker login git.backstage-platform.ru:5050 -u registry-viewer -p gldt-yyxxD9zddKaWD_QsbVLt
 docker-compose -f ./devops/localhost/docker/docker-compose.yml -p backstage-marketing-app up
 ```
