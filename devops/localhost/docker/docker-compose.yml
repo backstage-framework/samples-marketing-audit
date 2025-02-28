@@ -7,7 +7,7 @@ services:
             - "5432:5432"
 
     ui:
-        image: git.backstage-platform.ru:5050/backstage/components/cms:latest
+        image: git.backstage-platform.ru:5050/backstage/components/cms:stable
 
     nginx:
         image: nginx:latest
