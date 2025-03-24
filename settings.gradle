@@ -1,7 +1,7 @@
 pluginManagement {
     repositories {
         maven {
-            url backstageNexusUrl
+            url = backstageNexusUrl
             credentials(HttpHeaderCredentials) {
                 name = "Deploy-Token"
                 value = backstageNexusToken
@@ -11,7 +11,7 @@ pluginManagement {
             }
         }
 
-        maven { url 'https://plugins.gradle.org/m2/' }
+        maven { url = 'https://plugins.gradle.org/m2/' }
     }
 }
 
@@ -20,7 +20,7 @@ rootProject.name = "backstage-marketing"
 dependencyResolutionManagement {
     repositories {
         maven {
-            url backstageNexusUrl
+            url = backstageNexusUrl
             credentials(HttpHeaderCredentials) {
                 name = "Deploy-Token"
                 value = backstageNexusToken

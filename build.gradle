@@ -14,7 +14,7 @@ buildscript {
 
 	repositories {
 		maven {
-			url backstageNexusUrl
+			url = backstageNexusUrl
 			credentials(HttpHeaderCredentials) {
 				name = "Deploy-Token"
 				value = backstageNexusToken
@@ -39,7 +39,7 @@ subprojects {
 
 	repositories {
 		maven {
-			url backstageNexusUrl
+			url = backstageNexusUrl
 			credentials(HttpHeaderCredentials) {
 				name = "Deploy-Token"
 				value = backstageNexusToken
