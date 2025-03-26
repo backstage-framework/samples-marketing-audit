@@ -33,5 +33,4 @@ bootJar {
 }
 dictsCodegen {
 	targetPackage = "com.example.marketing.service.generated"
-	version = backstageVersion
 }
