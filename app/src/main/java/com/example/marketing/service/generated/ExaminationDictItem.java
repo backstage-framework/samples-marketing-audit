@@ -14,7 +14,7 @@ import java.util.*;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-02-20T12:07:50.047211+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-03-31T14:08:04.210756+03:00[Europe/Moscow]")
 @Schema(description = "Проверки")
 public final class ExaminationDictItem implements AbstractDictItem
 {
@@ -37,10 +37,6 @@ public final class ExaminationDictItem implements AbstractDictItem
 	public static final String CREATED = "created";
 
 	public static final String UPDATED = "updated";
-
-	public static final String DELETED = "deleted";
-
-	public static final String DELETION_REASON = "deletionReason";
 
 	public static final String HISTORY = "history";
 
@@ -76,12 +72,6 @@ public final class ExaminationDictItem implements AbstractDictItem
 	@NotNull
 	private LocalDateTime updated;
 
-	@Schema(description = "Дата удаления")
-	private LocalDateTime deleted;
-
-	@Schema(description = "Причина удаления")
-	private String deletionReason;
-
 	@Schema(description = "История изменений")
 	@NotNull
 	private List<Map<String, Object>> history;
@@ -111,8 +101,6 @@ public final class ExaminationDictItem implements AbstractDictItem
 		this.photos = new ArrayList<>((List<String>) Objects.requireNonNullElse(dictItem.getData().get(PHOTOS), List.of()));
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
-		this.deleted = dictItem.getDeleted();
-		this.deletionReason = dictItem.getDeletionReason();
 		this.history = dictItem.getHistory();
 		this.version = dictItem.getVersion();
 	}

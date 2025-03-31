@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-02-20T12:07:50.030732+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-03-31T14:08:04.198378+03:00[Europe/Moscow]")
 @Schema(description = "Магазины")
 public final class StoreDictItem implements AbstractDictItem
 {
@@ -38,10 +38,6 @@ public final class StoreDictItem implements AbstractDictItem
 	public static final String CREATED = "created";
 
 	public static final String UPDATED = "updated";
-
-	public static final String DELETED = "deleted";
-
-	public static final String DELETION_REASON = "deletionReason";
 
 	public static final String HISTORY = "history";
 
@@ -73,12 +69,6 @@ public final class StoreDictItem implements AbstractDictItem
 	@NotNull
 	private LocalDateTime updated;
 
-	@Schema(description = "Дата удаления")
-	private LocalDateTime deleted;
-
-	@Schema(description = "Причина удаления")
-	private String deletionReason;
-
 	@Schema(description = "История изменений")
 	@NotNull
 	private List<Map<String, Object>> history;
@@ -96,6 +86,7 @@ public final class StoreDictItem implements AbstractDictItem
 		this.details = details;
 	}
 
+	@SuppressWarnings("unchecked")
 	public StoreDictItem(DictItem dictItem)
 	{
 		this.id = dictItem.getId();
@@ -105,8 +96,6 @@ public final class StoreDictItem implements AbstractDictItem
 		this.details = (Map<String, Object>) dictItem.getData().get(DETAILS);
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
-		this.deleted = dictItem.getDeleted();
-		this.deletionReason = dictItem.getDeletionReason();
 		this.history = dictItem.getHistory();
 		this.version = dictItem.getVersion();
 	}

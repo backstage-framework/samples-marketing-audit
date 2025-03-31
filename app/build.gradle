@@ -31,6 +31,7 @@ dependencies {
 bootJar {
 	archiveBaseName = project.name
 }
+
 dictsCodegen {
 	targetPackage = "com.example.marketing.service.generated"
 }
