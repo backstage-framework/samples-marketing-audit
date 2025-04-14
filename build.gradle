@@ -28,7 +28,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath "com.backstage:gradle-plugins:$gradlePluginsVersion"
+		classpath "com.backstage:gradle-plugins:$backstageVersion"
 	}
 }
 
