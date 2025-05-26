@@ -18,6 +18,9 @@ create table user['Пользователи']
 
 alter table user set writePermission = 'ADMIN';
 
+create enum userStatus['Статус пользователя'] for user as ('ACTIVE', 'DISABLED');
+alter table user add column status					userStatus		not null	default 'ACTIVE';
+
 create table examination['Проверки']
 (
     store['Магазин']						        text		    not null	references store,

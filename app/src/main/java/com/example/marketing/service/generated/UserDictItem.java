@@ -7,26 +7,30 @@ import jakarta.annotation.Generated;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-03-31T14:08:04.209274+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-05-26T14:26:14.654504+03:00[Europe/Moscow]")
 @Schema(description = "Пользователи")
 public final class UserDictItem implements AbstractDictItem
 {
 	public static final String DICT_ID = "user";
 
-	public static final Long DICT_VERSION = 2L;
+	public static final Long DICT_VERSION = 4L;
 
 	public static final String ID = "id";
 
 	public static final String NAME = "name";
+
+	public static final String STATUS = "status";
 
 	public static final String CREATED = "created";
 
@@ -42,6 +46,9 @@ public final class UserDictItem implements AbstractDictItem
 	@Schema(description = "Имя")
 	@NotNull
 	private String name;
+
+	@NotNull
+	private UserStatus status;
 
 	@Schema(description = "Дата создания")
 	@NotNull
@@ -60,15 +67,17 @@ public final class UserDictItem implements AbstractDictItem
 	private Long version;
 
 	@Builder
-	public UserDictItem(String name)
+	public UserDictItem(String name, UserStatus status)
 	{
 		this.name = name;
+		this.status = status;
 	}
 
 	public UserDictItem(DictItem dictItem)
 	{
 		this.id = dictItem.getId();
 		this.name = (String) dictItem.getData().get(NAME);
+		this.status = UserStatus.fromValue((String) dictItem.getData().get(STATUS));
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
 		this.history = dictItem.getHistory();
@@ -80,6 +89,24 @@ public final class UserDictItem implements AbstractDictItem
 	{
 		var dataMap = new HashMap<String, Object>();
 		dataMap.put(NAME, getName());
+		dataMap.put(STATUS, (getStatus() != null) ? getStatus().getValue() : null);
 		return dataMap;
+	}
+
+	/**
+	 * Статус пользователя
+	 */
+	@Getter
+	@RequiredArgsConstructor
+	public enum UserStatus
+	{
+		DISABLED("DISABLED"), ACTIVE("ACTIVE");
+
+		private final String value;
+
+		public static UserStatus fromValue(String value)
+		{
+			return Arrays.stream(UserStatus.values()).filter(it -> it.getValue().equals(value)).findFirst().orElse(null);
+		}
 	}
 }
