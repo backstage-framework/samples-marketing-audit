@@ -10,7 +10,8 @@
 					"dictId": "store",
 					"fields": [
 						"name",
-						"location"
+						"location",
+						"area"
 					]
 				},
 				{
@@ -33,6 +34,7 @@
 					"fields": [
 						"name",
 						"location",
+						"area",
 						"details"
 					],
 					"pageType": "SCROLL"

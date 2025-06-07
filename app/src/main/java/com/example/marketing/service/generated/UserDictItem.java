@@ -18,7 +18,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-05-26T14:26:14.654504+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-06-07T19:39:42.126001+03:00[Europe/Moscow]")
 @Schema(description = "Пользователи")
 public final class UserDictItem implements AbstractDictItem
 {
@@ -107,6 +107,12 @@ public final class UserDictItem implements AbstractDictItem
 		public static UserStatus fromValue(String value)
 		{
 			return Arrays.stream(UserStatus.values()).filter(it -> it.getValue().equals(value)).findFirst().orElse(null);
+		}
+
+		@Override
+		public String toString()
+		{
+			return value;
 		}
 	}
 }

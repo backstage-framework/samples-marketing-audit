@@ -3,6 +3,7 @@ create table store['Магазины']
 	name['Название'] 								text 		    not null,
 	location['Расположение']						geo_json	    not null,
     address['Адрес']								text	        not null,
+	area['Площадь, м2']								decimal,
 	details['Дополнительные атрибуты']				json
 );
 

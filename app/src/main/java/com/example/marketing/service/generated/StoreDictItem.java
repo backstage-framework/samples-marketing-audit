@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.geojson.GeoJsonObject;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-05-26T14:26:14.651763+03:00[Europe/Moscow]")
+@Generated(value = "com.backstage.app.dict.service.codegen.server.generator.DictItemModelGenerator", date = "2025-06-07T19:39:42.114763+03:00[Europe/Moscow]")
 @Schema(description = "Магазины")
 public final class StoreDictItem implements AbstractDictItem
 {
@@ -32,6 +33,8 @@ public final class StoreDictItem implements AbstractDictItem
 	public static final String LOCATION = "location";
 
 	public static final String ADDRESS = "address";
+
+	public static final String AREA = "area";
 
 	public static final String DETAILS = "details";
 
@@ -58,6 +61,9 @@ public final class StoreDictItem implements AbstractDictItem
 	@NotNull
 	private String address;
 
+	@Schema(description = "Площадь, м2")
+	private BigDecimal area;
+
 	@Schema(description = "Дополнительные атрибуты")
 	private Map<String, Object> details;
 
@@ -78,11 +84,12 @@ public final class StoreDictItem implements AbstractDictItem
 	private Long version;
 
 	@Builder
-	public StoreDictItem(String name, GeoJsonObject location, String address, Map<String, Object> details)
+	public StoreDictItem(String name, GeoJsonObject location, String address, BigDecimal area, Map<String, Object> details)
 	{
 		this.name = name;
 		this.location = location;
 		this.address = address;
+		this.area = area;
 		this.details = details;
 	}
 
@@ -93,6 +100,7 @@ public final class StoreDictItem implements AbstractDictItem
 		this.name = (String) dictItem.getData().get(NAME);
 		this.location = (GeoJsonObject) dictItem.getData().get(LOCATION);
 		this.address = (String) dictItem.getData().get(ADDRESS);
+		this.area = (BigDecimal) dictItem.getData().get(AREA);
 		this.details = (Map<String, Object>) dictItem.getData().get(DETAILS);
 		this.created = dictItem.getCreated();
 		this.updated = dictItem.getUpdated();
@@ -107,6 +115,7 @@ public final class StoreDictItem implements AbstractDictItem
 		dataMap.put(NAME, getName());
 		dataMap.put(LOCATION, getLocation());
 		dataMap.put(ADDRESS, getAddress());
+		dataMap.put(AREA, getArea());
 		dataMap.put(DETAILS, getDetails());
 		return dataMap;
 	}
