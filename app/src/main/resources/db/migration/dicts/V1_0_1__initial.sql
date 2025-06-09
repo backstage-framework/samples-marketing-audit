@@ -4,6 +4,7 @@ create table store['Магазины']
 	location['Расположение']						geo_json	    not null,
     address['Адрес']								text	        not null,
 	area['Площадь, м2']								decimal,
+	actualized['Дата актуализации']					timestamp,
 	details['Дополнительные атрибуты']				json
 );
 
