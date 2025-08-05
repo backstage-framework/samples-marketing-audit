@@ -1,7 +1,10 @@
 {
+	"title": "Цифровой аудит",
 	"views": {
 		"default": {
 			"menuType": "VERTICAL",
+			"exportTo": ["CSV, SQL, JSON"],
+			"importFrom": ["JSON", "CSV"],
 			"items": [
 				{
 					"dictId": "user"
